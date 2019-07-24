@@ -1,4 +1,5 @@
-﻿using StackExchange.Redis;
+﻿using RedisPubSubExample.Core.Extensions;
+using StackExchange.Redis;
 using System;
 
 namespace RedisPubSubExample.Core

@@ -1,8 +1,10 @@
-﻿using StackExchange.Redis;
+﻿using RedisPubSubExample.Core.Extensions;
+using RedisPubSubExample.Core.MessageBroker.Abstractions;
+using StackExchange.Redis;
 using System;
 using System.Threading.Tasks;
 
-namespace RedisPubSubExample.Core
+namespace RedisPubSubExample.Core.Redis.MessageBroker.Implementations
 {
     public class RedisProducer : IProducer
     {

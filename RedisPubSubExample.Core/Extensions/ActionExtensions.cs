@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace RedisPubSubExample.Core
+namespace RedisPubSubExample.Core.Extensions
 {
     public static class ActionExtensions
     {
-        public static T RetryOnException<T>(this Func<T> @delegate, int times, TimeSpan delay)
+        public static T RetryOnException<T>(this Func<T> function, int times, TimeSpan delay)
         {
             T returnValue;
             var attempts = 0;
@@ -14,7 +14,7 @@ namespace RedisPubSubExample.Core
                 try
                 {
                     attempts++;
-                    returnValue = @delegate.Invoke();
+                    returnValue = function.Invoke();
                     break;
                 }
                 catch (Exception e)
@@ -50,7 +50,7 @@ namespace RedisPubSubExample.Core
             return returnValue;
         }
 
-        public static void RetryOnException(this Action @delegate, int times, TimeSpan delay)
+        public static void RetryOnException(this Action action, int times, TimeSpan delay)
         {
             var attempts = 0;
             do
@@ -58,7 +58,7 @@ namespace RedisPubSubExample.Core
                 try
                 {
                     attempts++;
-                    @delegate();
+                    action();
                     break;
                 }
                 catch (Exception e)

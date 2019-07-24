@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace RedisPubSubExample.Core
+namespace RedisPubSubExample.Core.MessageBroker.Abstractions
 {
     public interface IConsumer
     {

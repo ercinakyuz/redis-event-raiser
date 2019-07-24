@@ -1,7 +1,6 @@
-﻿using RedisPubSubExample.Core;
+﻿using RedisPubSubExample.Core.Redis.MessageBroker.Implementations;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace RedisPubSubExample.ConsoleApp
